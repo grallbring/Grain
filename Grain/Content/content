@@ -1,0 +1,8 @@
+﻿/platform:DesktopGL
+/profile:HiDef
+/compress:False
+/clean
+
+/importer:EffectImporter
+/processor:EffectProcessor
+/build:Shaders/shader.fx

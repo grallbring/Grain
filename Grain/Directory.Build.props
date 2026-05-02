@@ -1,0 +1,10 @@
+<Project>
+    <PropertyGroup>
+        <BuildDirectory>Build\</BuildDirectory>
+        <BaseOutputPath>$(BuildDirectory)Output\</BaseOutputPath>
+        <BaseIntermediateOutputPath>$(BuildDirectory)Intermediate\</BaseIntermediateOutputPath>
+        <OutputPath>$(BaseOutputPath)$(Configuration)\</OutputPath>
+        <IntermediateOutputPath>$(BaseIntermediateOutputPath)$(Configuration)\</IntermediateOutputPath>
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    </PropertyGroup>
+</Project>
