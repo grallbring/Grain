@@ -36,8 +36,6 @@ public class ProgramGame : Game
 
         this.shader = this.Content.Load<Effect>("Shaders/shader");
 
-        this.shader.Parameters["AspectRatio"]?.SetValue(this.GraphicsDevice.Viewport.AspectRatio);
-
         this.pixelTexture.SetData([Color.White]);
     }
 
