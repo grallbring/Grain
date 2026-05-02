@@ -41,9 +41,7 @@ public class ProgramGame : Game
 
     protected override void Update(GameTime gameTime)
     {
-        float deltaTime = (float) gameTime.ElapsedGameTime.TotalSeconds;
-
-        this.totalTime += deltaTime;
+        this.totalTime += (float) gameTime.ElapsedGameTime.TotalSeconds;
 
         this.shader.Parameters["AspectRatio"]?.SetValue(this.GraphicsDevice.Viewport.AspectRatio);
         this.shader.Parameters["Time"]?.SetValue(this.totalTime);
@@ -58,7 +56,8 @@ public class ProgramGame : Game
         this.spriteBatch.Draw(
             this.pixelTexture,
             new Rectangle(this.GraphicsDevice.Viewport.X, this.GraphicsDevice.Viewport.Y, this.GraphicsDevice.Viewport.Width, this.GraphicsDevice.Viewport.Height),
-            Color.White);
+            Color.White
+        );
 
         this.spriteBatch.End();
     }
