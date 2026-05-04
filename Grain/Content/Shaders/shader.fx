@@ -1,14 +1,17 @@
 ﻿float AspectRatio = 0.0;
 float Time = 0.0;
 
-float3 palette(float t)
-{
-    float3 a = float3(0.5, 0.5, 0.5);
-    float3 b = float3(0.5, 0.5, 0.5);
-    float3 c = float3(1.0, 1.0, 1.0);
-    float3 d = float3(0.263, 0.416, 0.557);
+float4 pixel_shader(float4 position : SV_Position, float4 color : COLOR0, float2 uv : TEXCOORD0) : COLOR;
+float3 palette(float t);
 
-    return a + b * cos((c * t + d) * 6.28318);
+technique
+{
+
+    pass
+    {
+        PixelShader = compile ps_3_0 pixel_shader();
+    }
+
 }
 
 float4 pixel_shader(float4 position : SV_Position, float4 color : COLOR0, float2 uv : TEXCOORD0) : COLOR
@@ -33,12 +36,12 @@ float4 pixel_shader(float4 position : SV_Position, float4 color : COLOR0, float2
     return float4(c, 1.0);
 }
 
-technique
+float3 palette(float t)
 {
+    float3 a = float3(0.5, 0.5, 0.5);
+    float3 b = float3(0.5, 0.5, 0.5);
+    float3 c = float3(1.0, 1.0, 1.0);
+    float3 d = float3(0.263, 0.416, 0.557);
 
-    pass
-    {
-        PixelShader = compile ps_3_0 pixel_shader();
-    }
-
+    return a + b * cos((c * t + d) * 6.28318);
 }
